@@ -22,5 +22,5 @@
 <p><img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=x-jy-liu&show_icons=true&locale=en&layout=compact" alt="x-jy-liu" /></p>
 
 ### 🐍 GitHub Contribution Snake
-![Snake animation](https://github.com/x-jy-liu/x-jy-liu/blob/output/github-contribution-grid-snake.svg)
+![Snake animation](https://raw.githubusercontent.com/x-jy-liu/x-jy-liu/output/github-contribution-grid-snake.svg)
 
