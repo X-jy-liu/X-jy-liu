@@ -35,5 +35,5 @@ jobs:
           git commit -m "Generated snake animation" || echo "No changes to commit"
           
           # 强制推送（如果 pull 失败，可改成 git push origin output --force）
-          git push origin output
+          git push origin output --force
 
