@@ -22,6 +22,7 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout output || git checkout -b output  # 如果 output 存在则切换，否则创建
           git add dist/github-contribution-grid-snake.svg
-          git commit -m "Generated snake animation"
-          git push https://x-jy-liu:${{ secrets.GH_PAT }}@github.com/X-jy-liu/X-jy-liu.git output
+          git commit -m "Generated snake animation" || echo "No changes to commit"
+          git push origin output
