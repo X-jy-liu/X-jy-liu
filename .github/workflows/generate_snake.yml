@@ -22,7 +22,18 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git checkout output || git checkout -b output  # 如果 output 存在则切换，否则创建
+
+          # 确保 checkout 了 output 分支
+          git fetch origin output || echo "No remote output branch yet"
+          git checkout output || git checkout -b output
+
+          # **拉取远程最新代码，防止冲突**
+          git pull origin output --rebase
+
+          # 添加 snake SVG 并提交
           git add dist/github-contribution-grid-snake.svg
           git commit -m "Generated snake animation" || echo "No changes to commit"
+          
+          # 强制推送（如果 pull 失败，可改成 git push origin output --force）
           git push origin output
+
